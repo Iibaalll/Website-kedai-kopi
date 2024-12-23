@@ -2,8 +2,9 @@
 const hamburgerMenu = document.getElementById("hamburger-menu");
 const navbarActive = document.querySelector(".navbar-nav");
 // Ketika Hamburger menu di klik
-hamburgerMenu.addEventListener("click", function () {
+hamburgerMenu.addEventListener("click", function (e) {
   navbarActive.classList.toggle("active");
+  e.preventDefault();
 });
 // Klik dimanapun kecuali hamburger dan nav untuk menghilangkan nav
 document.addEventListener("click", function (e) {
