@@ -28,3 +28,28 @@ document.addEventListener("click", function (e) {
     searchForm.classList.remove("active");
   }
 });
+// Toggle untuk Shopping Cart
+const btnShop = document.getElementById("shopping-bag");
+const shoppingCart = document.querySelector(".shoping-cart");
+btnShop.addEventListener("click", function () {
+  shoppingCart.classList.toggle("active");
+});
+// Klik dimanapun kecuali shop dan shopping cart untuk menghilangkan shopping cart
+document.addEventListener("click", function (e) {
+  if (!btnShop.contains(e.target) && !shoppingCart.contains(e.target)) {
+    shoppingCart.classList.remove("active");
+  }
+});
+// Untuk menghapus Produk di shopping cart
+const removeItem = querySelectorAll(".remove-item");
+const cartItem = querySelector(".cart-item");
+removeItem.forEach(function (index) {
+  index.addEventListener("click", function () {
+    cartItem.style.display = "none";
+  });
+});
+// shoppingCart.addEventListener("click", function (e) {
+//   if (e.target.className == "remove-item") {
+//     cartItem.style.display = "none";
+//   }
+// });
